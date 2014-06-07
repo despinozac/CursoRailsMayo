@@ -36,6 +36,8 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.1.0)
+    formtastic (2.2.1)
+      actionpack (>= 3.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -106,6 +108,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  formtastic
   jbuilder (~> 1.2)
   jquery-rails
   pg

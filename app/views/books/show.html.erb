@@ -1,0 +1,26 @@
+<h1>Libro: <%= @book.title %></h1>
+<p>
+  <b>Author: </b>
+  <%= @book.author %>
+</p>
+</br>
+
+<table border = "1">
+  <thead>
+    <tr>
+      <th>Usuario</td>
+      <th>Comentario</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @book.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.user.nombre_completo %></td>
+        <td><%= comment.comment %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to "Crear Comentario", new_book_comment_path(@book) %>

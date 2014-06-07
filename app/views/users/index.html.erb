@@ -1,0 +1,38 @@
+<h3><%= flash[:notice] %></h3>
+
+<h1>Users</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Birthday</th>
+      <th>Created at</th>
+      <th>Updated at</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.birth_day %></td>
+      <td><%= user.created_at %></td>
+      <td><%= user.updated_at %></td>
+      <td>
+        <%= link_to "Editar", edit_user_path(user) %>
+        <%= link_to "Eliminar", user_path(user), method: :delete, data: { confirm: "¿Está seguro?" } %>
+        <%= link_to "Ver Profile", profile_user_path(user) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</br>
+
+<%= link_to "Create User", new_user_path %>

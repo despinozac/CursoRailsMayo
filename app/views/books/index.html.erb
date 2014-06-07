@@ -1,0 +1,36 @@
+<h3><%= flash[:notice] %></h3>
+
+<h1>Books</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Publish Date</th>
+      <th>Page Count</th>
+      <th>Created at</th>
+      <th>Updated at</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+      <td><%= book.title%></td>
+      <td><%= book.author %></td>
+      <td><%= book.publish_date %></td>
+      <td><%= book.page_count %></td>
+      <td><%= book.created_at %></td>
+      <td><%= book.updated_at %></td>
+      <td>
+        <%= link_to "Ver Libro", book_path(book) %>
+        <%= link_to "Editar", edit_book_path(book) %>
+        <%= link_to "Eliminar", book_path(book), method: :delete, data: { confirm: "¿Está seguro?" } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</br>
+<%= link_to "Create Book", new_book_path %>

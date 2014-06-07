@@ -1,0 +1,21 @@
+<%= semantic_form_for @user do |f| %>
+  <%= f.input :name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :birth_day, as: :string, label: "Fecha de Nacimiento" %>
+  <%= f.input :password %>
+
+  <h3>Profile:</h3>
+  
+  <%= f.semantic_fields_for :profile do |h| %>
+    <%= h.input :phone %>
+    <%= h.input :country, as: :string %>
+    <%= h.input :city %>
+    <%= h.input :zip_code %>
+    <%= h.input :line1 %>
+    <%= h.input :line2 %>
+    <%= h.input :url_gravatar %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>

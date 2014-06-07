@@ -1,0 +1,7 @@
+<%= semantic_form_for @book do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :publish_date, as: :string %>
+  <%= f.input :page_count %>
+  <%= f.submit %>
+<% end %>
