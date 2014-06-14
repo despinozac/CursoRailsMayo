@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
   def create
     @book = Book.find(params[:book_id])
     @comment = Comment.new(permit_params)
+    @comment.user = current_user
     @comment.book_id = params[:book_id]
     if @comment.save
       flash[:notice] = "El comentario fue creado correctamente"

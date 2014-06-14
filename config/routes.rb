@@ -5,8 +5,15 @@ Curso::Application.routes.draw do
       get :profile
     end
   end
+  
+  resources :session
 
   resources :books do
+    member do
+      patch :read 
+    end
     resources :comments
   end
+
+  root 'books#index'
 end

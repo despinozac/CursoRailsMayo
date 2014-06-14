@@ -1,3 +1,11 @@
+<h2>Errores: </h2>
+<% @user.errors.messages.each do |key,value| %>
+  <p>
+    <b><%= key.to_s.humanize %>:</b>
+    <%= value.first %>
+  </p>
+<% end %>
+
 <%= semantic_form_for @user do |f| %>
   <%= f.input :name %>
   <%= f.input :last_name %>
@@ -16,6 +24,12 @@
     <%= h.input :line2 %>
     <%= h.input :url_gravatar %>
   <% end %>
+
+  <h3>Libros: </h3>
+
+  <%= f.input :books, as: :check_boxes %>
+
+  </br>
 
   <%= f.submit %>
 <% end %>

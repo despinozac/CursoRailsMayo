@@ -35,7 +35,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: curso_production
+  database: curso_development
   pool: 5
   username: curso
   password: 123456

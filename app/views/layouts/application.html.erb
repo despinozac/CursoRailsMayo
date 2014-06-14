@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <!-- session_path(1) es un force para el destroy. -->
+<%= link_to "Logout", session_path(1), method: :delete %>
+</br></br>
 <%= yield %>
 
 </body>

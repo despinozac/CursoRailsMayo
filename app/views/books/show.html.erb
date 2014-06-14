@@ -1,7 +1,12 @@
+<%= flash[:notice] %>
+
 <h1>Libro: <%= @book.title %></h1>
 <p>
   <b>Author: </b>
   <%= @book.author %>
+  <% unless @read %>
+    <%= link_to "Ya lo lei", read_book_path, method: :patch %>
+  <% end  %>
 </p>
 </br>
 
@@ -22,5 +27,12 @@
   </tbody>
 </table>
 
+<h3>Read by: </h3>
 
+<% @book.users.each do |user| %>
+  <b><%= user.nombre_completo %></b>
+<% end %>
+
+</br>
+</br>
 <%= link_to "Crear Comentario", new_book_comment_path(@book) %>
